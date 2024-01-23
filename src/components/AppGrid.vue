@@ -4,7 +4,7 @@
     :style="{height: gridHeight}"
 >
     <li v-for="window in windows" :key="window.key">
-        <button class="icon" @touchstart="openWindow(window.windowId)" @dblclick="openWindow(window.windowId)">
+        <button class="icon" @touchstart="window.type ? redirectLink(window.url): openWindow(window.windowId)" @dblclick="window.type ? redirectLink(window.url):openWindow(window.windowId)">
             <img class="icon-image" :src="require('../assets/icons/' + window.iconImage)" :alt="window.altText" />
             <div class="border">
             <p class="icon-text">
@@ -37,6 +37,13 @@ export default {
             }
             this.$store.commit('setWindowState', payload)
         },
+        redirectLink(url) {
+        const link = document.createElement("a");
+        link.href = url;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      },
     },
     mounted() {
         let gridH =  this.$store.getters.getFullscreenWindowHeight

@@ -1,5 +1,15 @@
 <template>
 <nav class="navbar-container">
+<div class='start-menu-drawer' v-if="startToggled">
+<div class='sidebar'>
+<img :src="require('@/assets/icons/sidebar.png')" width='25px' height='150px' >
+
+</div>
+</div>
+<div @click="toggleStart"  :class="startToggled ? 'start-menu-active':'start-menu'" >
+<img :src="require('@/assets/icons/start-icon.png')" width='19px' style='margin-right:5px;'>
+Start
+</div>
     <div 
         v-for="window in this.activeWindows" 
         :key="window.key"
@@ -42,13 +52,82 @@
     align-items: center;
 }
 
+.start-menu{
+ box-shadow: 1.5px 1.5px black;
+    border-top: solid rgb(250, 250, 250) 1.5px;
+    border-left: solid rgb(250, 250, 250) 1.5px;
+    border-bottom: solid rgb(90, 90, 90) 1.5px;
+    border-right: solid rgb(90, 90, 90) 1.5px;
+    background: rgb(192, 192, 192);
+    border-radius: 0.5px;
+    width: 100px;
+    margin: 5px;
+    height: 25px;
+        display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.start-menu-active {
+      background: rgb(192, 192, 192);
+    box-shadow: none;
+    border-top: solid rgb(0, 0, 0) 1.5px;
+    border-left: solid rgb(0, 0, 0) 1.5px;
+    border-bottom: solid rgb(250, 250, 250) 1.5px;
+    border-right: solid rgb(250, 250, 250) 1.5px;
+        border-radius: 0.5px;
+    width: 100px;
+    margin: 5px;
+    height: 25px;
+        display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.start-menu-drawer{
+    z-index: 2147483647 ;
+    position: absolute;
+    left: 0px;
+    bottom: 39px;
+    width: 165px;
+    height: 282px;
+    background: #000;
+    background: #c3c3c3;
+    overflow: hidden;
+    border-top: 2px solid #fafafa;
+    border-left: 2px solid #fafafa;
+    border-right: 1.5px solid #5a5a5a;
+    border-bottom: 1.5px solid #5a5a5a;
+    box-shadow: 1.5px 1.5px #000;
+    max-height: 100%;
+    max-width: 100%;
+    align-items: flex-end;
+    outline: 1px solid #dedede;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    font-size: 12px;
+}
+
+.sidebar{
+    width: 25px;
+    background: #7b7d7b;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+}
+
+
+
+
 /*-------------------------------------------*\
     Navbar Items
 \*-------------------------------------------*/
 
 .navbar-item {
     width: 100px;
-    height: 23px;
+    height: 25px;
     border-radius: 10px;
     margin-left: 2px;
     margin-right: 2px;
@@ -83,7 +162,7 @@
 
 .navbar-item-depressed {
     width: 100px;
-    height: 23px;
+    height: 25px;
     border-radius: 10px;
     margin-left: 2px;
     margin-right: 2px;
@@ -148,7 +227,7 @@ export default {
     data: function () {
         return {
             activeWindows: this.$store.getters.getActiveWindows,
-
+            startToggled:false,
             // date time for moment.js
             time: '',
             date: ''
@@ -170,6 +249,10 @@ export default {
             }
             this.$store.commit('setWindowState', payload)
         },
+
+        toggleStart(){
+            this.startToggled = !this.startToggled
+        }
     }
 }
 </script>

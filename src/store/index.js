@@ -18,79 +18,64 @@ export default new Vuex.Store({
     zIndex: 2, 
 
     windows: [
+
       {
-        windowId: "LoremIpsum", // Unique ID
-        windowState: "close", // Window State [open, close, minimize]
-        displayName: "Lorem Ipsum", // Display Name (title under icon)
-        windowComponent: 'window', // Window Component (can be changed to use modified windows)
-        windowContent: 'Placeholder', // Window Content (used under slots)
-        windowContentPadding: {
-          top: null,
-          right: null,
-          bottom: null,
-          left: null
-        }, // Window Content Padding 
-        position: "absolute", // Window Position
-        positionX: "10vw", // Window Position X (when first opened)
-        positionY: "15vh", // Window Position Y (when first opened)
-        iconImage: "placeholder.png", // Window Icon Image
-        altText: "Placeholder Icon", // Window Icon Alt Text
-        fullscreen: false // Window Fullscreen State [true, false]
-      },
-      {
-        windowId: "MacOS", 
+        windowId: "CaseStudies", 
         windowState: "close",
-        displayName: "MacOS Theme",
-        windowComponent: 'OSWindow',
-        windowContent: 'MacOS',
+        displayName: "Case Studies",
+        windowComponent: 'window',
+        windowContent: 'Case',
         windowContentPadding: {
-          top: '0px',
-          right: '0px',
-          bottom: '0px',
-          left: '0px'
+          top: '5%',
+          right: '5%',
+          bottom: '5%',
+          left: '5%'
         },
         position: "absolute",
-        positionX: "1vw",
-        positionY: "1vh",
-        iconImage: "placeholder.png",
+        positionX: "10vw",
+        positionY: "10vvh",
+        iconImage: "case-studies.png",
+        altText: "CaseStudies Icon",
+        fullscreen: false
+    },
+
+      {
+        windowId: "ResumeLink", 
+        windowState: "close",
+        displayName: "Resume",
+        windowComponent: 'window',
+        type:'url',
+        url:'/downloads/resume.pdf',
+        windowContent: 'Photos',
+        windowContentPadding: {
+          top: '5%',
+          right: '5%',
+          bottom: '5%',
+          left: '5%'
+        },
+        position: "absolute",
+        positionX: "6vw",
+        positionY: "12vh",
+        iconImage: "resume.png",
         altText: "Placeholder Icon",
         fullscreen: false
       },
       {
-        windowId: "Windows", 
+        windowId: "MailLink", 
         windowState: "close",
-        displayName: "Windows Theme",
-        windowComponent: 'OSWindow',
-        windowContent: 'Windows',
+        displayName: "Mail",
+        windowComponent: 'window',
+        windowContent: 'Mail',
         windowContentPadding: {
-          top: '0px',
-          right: '0px',
-          bottom: '0px',
-          left: '0px'
+          top: '5%',
+          right: '5%',
+          bottom: '5%',
+          left: '5%'
         },
         position: "absolute",
-        positionX: "1vw",
-        positionY: "1vh",
-        iconImage: "placeholder.png",
-        altText: "Placeholder Icon",
-        fullscreen: false
-      },
-      {
-        windowId: "Blueprint", 
-        windowState: "close",
-        displayName: "Blueprint Theme",
-        windowComponent: 'OSWindow',
-        windowContent: 'Blueprint',
-        windowContentPadding: {
-          top: '0px',
-          right: '0px',
-          bottom: '0px',
-          left: '0px'
-        },
-        position: "absolute",
-        positionX: "1vw",
-        positionY: "1vh",
-        iconImage: "placeholder.png",
+        positionX: "6vw",
+        positionY: "12vh",
+        iconImage: "mail.png",
         altText: "Placeholder Icon",
         fullscreen: false
       },
@@ -109,11 +94,29 @@ export default new Vuex.Store({
         position: "absolute",
         positionX: "6vw",
         positionY: "12vh",
-        iconImage: "placeholder.png",
+        iconImage: "camera.png",
         altText: "Placeholder Icon",
         fullscreen: false
       },
-      // register your new windows here
+      {
+        windowId: "Biography", 
+        windowState: "close",
+        displayName: "Biography",
+        windowComponent: 'window',
+        windowContent: 'Test',
+        windowContentPadding: {
+            top: null,
+            right: null,
+            bottom: null,
+            left: null
+        },
+        position: "absolute",
+        positionX: "10vw",
+        positionY: "10vh",
+        iconImage: "bio.png",
+        altText: "Placeholder Icon",
+        fullscreen: false
+    },
     ],
   },
   mutations: {

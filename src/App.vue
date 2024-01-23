@@ -36,7 +36,7 @@
     Import Components, you can change the path for different
     component themes (blueprint, windows, macos)
 \*------------------------------------------------------------*/
-import Navbar from './components/blueprint/Navbar'
+import Navbar from './components/windows/Navbar'
 // import TopNavbar from './components/macos/TopNavbar.vue'
 import Window from './components/template/Window'
 import AppGrid from './components/AppGrid'
@@ -46,6 +46,8 @@ import OSWindow from './components/template/OSWindow'
 import Blueprint from './components/views/Blueprint'
 import Windows from './components/views/Windows.vue'
 import MacOS from './components/views/MacOS.vue'
+import Test from './components/views/Test.vue'
+import Case from './components/views/Case.vue'
 export default {
     name: 'App',
     data: function () {
@@ -63,7 +65,9 @@ export default {
         OSWindow,
         Blueprint,
         Windows,
-        MacOS
+        MacOS,
+        Test,
+        Case
         // TopNavbar,
     },
     computed: {
@@ -124,9 +128,9 @@ export default {
     Change 'blueprint' to 'windows' or 'macos' to use windows or macos theme
 \*---------------------------------------------------------------------------*/
 @import './assets/css/utils/normalize.css';
-@import './assets/css/blueprint/app.css';
-@import './assets/css/blueprint/window.css';
-@import './assets/css/blueprint/appgrid.css';
+@import './assets/css/windows/app.css';
+@import './assets/css/windows/window.css';
+@import './assets/css/windows/appgrid.css';
 
 /*-------------------------------------------*\
     Utilities
@@ -150,7 +154,7 @@ html {
 .screen {
     width: 100%;
     position: relative;
-    z-index: 999;
+    z-index: 1;
 }
 
 /*-------------------------------------------*\
