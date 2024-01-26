@@ -2,11 +2,11 @@
 <div class="wrapper">
 <nav class="navbar-container">
     <div 
-        v-for="window in this.windows" 
+        v-for="window in displayIcons" 
         :key="window.key"
     >
         <button 
-            @click="openWindow(window.windowId)" 
+            @click="window.type ? redirectLink(window.url):openWindow(window.windowId)" 
             class="navbar-item"
             :style="{backgroundImage: 'url(' + require('../../assets/icons/' + window.iconImage) + ')'}"
             :alt="window.altText"
@@ -107,7 +107,20 @@ export default {
                 'windowID': windowId
             }
             this.$store.commit('setWindowState', payload)
-        },      
-    }
+        },    
+        redirectLink(url) {
+        const link = document.createElement("a");
+        link.href = url;
+        link.target="_blank";
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      },  
+    },
+    computed:{
+        displayIcons(){
+            return this.windows.filter(window=>!window.showOnDesktop)
+        }
+    },
 }
 </script>

@@ -17,11 +17,80 @@ export default new Vuex.Store({
     // Z-index State
     zIndex: 2, 
 
+  
+      
+
+
     windows: [
+      {
+        windowId: "Biography", 
+        windowState: "close",
+        showOnDesktop:true,
+        type:'url',
+        url:'',
+        displayName: "Biography",
+        windowComponent: 'window',
+        windowContent: 'Bio',
+        windowContentPadding: {
+            top: null,
+            right: null,
+            bottom: null,
+            left: null
+        },
+        position: "absolute",
+        positionX: "10vw",
+        positionY: "10vh",
+        iconImage: "bio.png",
+        altText: "Placeholder Icon",
+        fullscreen: false
+    },
+    {
+      windowId: "ResumeLink", 
+      windowState: "close",
+      showOnDesktop:true,
+      displayName: "Resume",
+      windowComponent: 'window',
+      type:'url',
+      url:'/downloads/resume.pdf',
+      windowContent: 'Photos',
+      windowContentPadding: {
+        top: '5%',
+        right: '5%',
+        bottom: '5%',
+        left: '5%'
+      },
+      position: "absolute",
+      positionX: "6vw",
+      positionY: "12vh",
+      iconImage: "resume.png",
+      altText: "Placeholder Icon",
+      fullscreen: false
+    },
+    {
+      windowId: "PhotoWindow", 
+      windowState: "close",
+      showOnDesktop:true,
+      displayName: "Photos",
+      windowComponent: 'window',
+      windowContent: 'Photos',
+      windowContentPadding: {
+        top: '5%',
+        right: '5%',
+        bottom: '5%',
+        left: '5%'
+      },
+      position: "absolute",
+      positionX: "6vw",
+      positionY: "12vh",
+      iconImage: "camera.png",
+      altText: "Placeholder Icon",
+      fullscreen: false
+    },
 
       {
         windowId: "CaseStudies", 
         windowState: "close",
+        showOnDesktop:true,
         displayName: "Case Studies",
         windowComponent: 'window',
         windowContent: 'Case',
@@ -39,30 +108,16 @@ export default new Vuex.Store({
         fullscreen: false
     },
 
-      {
-        windowId: "ResumeLink", 
-        windowState: "close",
-        displayName: "Resume",
-        windowComponent: 'window',
-        type:'url',
-        url:'/downloads/resume.pdf',
-        windowContent: 'Photos',
-        windowContentPadding: {
-          top: '5%',
-          right: '5%',
-          bottom: '5%',
-          left: '5%'
-        },
-        position: "absolute",
-        positionX: "6vw",
-        positionY: "12vh",
-        iconImage: "resume.png",
-        altText: "Placeholder Icon",
-        fullscreen: false
-      },
+
       {
         windowId: "MailLink", 
         windowState: "close",
+        showOnDesktop:false,
+        type:'url',
+        url:"https://mail.google.com/mail/u/0/?view=cm&fs=1&to=srikanthiyr7@gmail.com&su=" +
+        encodeURIComponent("Message from Website") +
+        "&body=" +
+        encodeURIComponent("Hi Srikanth, looking forward to connect with you"),
         displayName: "Mail",
         windowComponent: 'window',
         windowContent: 'Mail',
@@ -80,11 +135,14 @@ export default new Vuex.Store({
         fullscreen: false
       },
       {
-        windowId: "PhotoWindow", 
+        windowId: "Behance", 
         windowState: "close",
-        displayName: "Photos",
+        displayName: "Behance",
         windowComponent: 'window',
-        windowContent: 'Photos',
+        type:'url',
+        showOnDesktop:false,
+        url:'http://behance.net/srikanthiy3978',
+        windowContent: 'Mail',
         windowContentPadding: {
           top: '5%',
           right: '5%',
@@ -94,29 +152,56 @@ export default new Vuex.Store({
         position: "absolute",
         positionX: "6vw",
         positionY: "12vh",
-        iconImage: "camera.png",
+        iconImage: "behance.png",
         altText: "Placeholder Icon",
         fullscreen: false
       },
       {
-        windowId: "Biography", 
+        windowId: "Linkedin", 
         windowState: "close",
-        displayName: "Biography",
+        showOnDesktop:false,
+        type:'url',
+        url:'http://linkedin.com/in/srikanth-n-b5995324b',
+        displayName: "Linkedin",
         windowComponent: 'window',
-        windowContent: 'Test',
+        windowContent: 'Mail',
         windowContentPadding: {
-            top: null,
-            right: null,
-            bottom: null,
-            left: null
+          top: '5%',
+          right: '5%',
+          bottom: '5%',
+          left: '5%'
         },
         position: "absolute",
-        positionX: "10vw",
-        positionY: "10vh",
-        iconImage: "bio.png",
+        positionX: "6vw",
+        positionY: "12vh",
+        iconImage: "linkedin.png",
         altText: "Placeholder Icon",
         fullscreen: false
-    },
+      },
+      {
+        windowId: "Dribbble", 
+        windowState: "close",
+        showOnDesktop:false,
+        displayName: "Dribbble",
+        type:'url',
+        url:'http://dribbble.com/srikanthiyr7',
+        windowComponent: 'window',
+        windowContent: 'Mail',
+        windowContentPadding: {
+          top: '5%',
+          right: '5%',
+          bottom: '5%',
+          left: '5%'
+        },
+        position: "absolute",
+        positionX: "6vw",
+        positionY: "12vh",
+        iconImage: "dribble.png",
+        altText: "Placeholder Icon",
+        fullscreen: false
+      },
+
+
     ],
   },
   mutations: {
