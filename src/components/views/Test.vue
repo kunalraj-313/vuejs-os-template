@@ -1,6 +1,6 @@
 <template lang="">
     <div>
-    <img :src="require('@/assets/icons/bio-image.jpg') " />
+    <img :src="require('@/assets/bio-image.jpg') " />
         Hi im srikanth wanna play?
     </div>
 </template>
