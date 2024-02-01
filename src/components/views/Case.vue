@@ -1,5 +1,5 @@
  <template lang="">
-    <div style="display:flex;flex-direction:column;align-items:center;justify-content:space-between;width:60px;margin-left:20px;height:270px">
+    <div style="display:flex;flex-direction:column;align-items:center;justify-content:space-between;width:600px;margin-left:20px;height:270px">
         
         <Icon :path="require('@/assets/icons/lifecycle.png')" width="40px" height="40px" downloadPath="/downloads/lifecycle.pdf" name="Lifecycle.cs"/> 
         <Icon :path="require('@/assets/icons/lifecycle.png')" width="40px" height="40px" downloadPath="/downloads/lifecycle-ios.pdf" name="Lifecycle.io"/> 
