@@ -1,5 +1,5 @@
 <template>
-<div id="app">
+<div id="app" @mouseover="playAudioOnHover" @click="playAudioOnClick">
     <div class="mute-button" @click="toggleMute">
             <div v-if="isMuted" >
               
@@ -20,7 +20,7 @@
     <top-navbar id="top-navbar"></top-navbar>
     <div class="screen" id="screen">
 
-        <audio ref="audio" id="audio-player" autoplay loop currentTIme="28">
+        <audio ref="audio" id="audio-player" autoplay loop >
     <source src="/audios/stay-ost.mp3" type="audio/mpeg">
     Your browser does not support the audio tag.
 </audio>
@@ -109,7 +109,11 @@ export default {
             Code is detecting height of navbar and setting
             respective heights of screen
         \*-------------------------------------------------*/
-        this.$refs.audio.currentTime = 25
+
+        const audio = this.$refs.audio;
+    audio.addEventListener('canplay', () => {
+        audio.currentTime = 25; // Set desired start time
+    });
         let navbar = document.getElementById('navbar')
         let topnavbar = document.getElementById('top-navbar')
         let topNavbarHeight = topnavbar.clientHeight
@@ -138,10 +142,19 @@ export default {
             this.$store.commit('setWindowState', payload)
         },
 
+        playAudioOnHover() {
+      const audio = this.$refs.audio;
+      audio.play().catch((error) => {
+        console.error('Playback failed:', error);
+      });
+    },
+    playAudioOnClick() {
+      this.playAudioOnHover(); // Call the same method for clicks
+    },
+
         toggleMute() {
       const audio = this.$refs.audio;
       audio.muted = !audio.muted; // Toggle mute
-      console.log(audio)
       this.isMuted = audio.muted; // Update mute state
     },
 

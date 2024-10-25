@@ -9,229 +9,223 @@ export default new Vuex.Store({
     fullscreenWindowHeight: window.innerHeight + "px",
 
     // Active Window State
-    activeWindow: "nil", 
+    activeWindow: "nil",
 
     // Active Windows Array State
     activeWindows: [],
 
     // Z-index State
-    zIndex: 2, 
-
-  
-      
-
+    zIndex: 2,
 
     windows: [
       {
-        windowId: "Biography", 
+        windowId: "Biography",
         windowState: "close",
-        showOnDesktop:true,
-        type:'url',
-        url:'',
+        showOnDesktop: true,
         displayName: "Biography",
-        windowComponent: 'window',
-        windowContent: 'Bio',
+        windowComponent: "window",
+        windowContent: "Bio",
         windowContentPadding: {
-            top: null,
-            right: null,
-            bottom: null,
-            left: null
+          top: null,
+          right: null,
+          bottom: null,
+          left: null,
         },
         position: "absolute",
         positionX: "10vw",
         positionY: "10vh",
         iconImage: "bio.png",
         altText: "Placeholder Icon",
-        fullscreen: false
-    },
-    {
-      windowId: "ResumeLink", 
-      windowState: "close",
-      showOnDesktop:true,
-      displayName: "Resume",
-      windowComponent: 'window',
-      type:'url',
-      url:'/downloads/resume.pdf',
-      windowContent: 'Photos',
-      windowContentPadding: {
-        top: '5%',
-        right: '5%',
-        bottom: '5%',
-        left: '5%'
+        fullscreen: false,
       },
-      position: "absolute",
-      positionX: "6vw",
-      positionY: "12vh",
-      iconImage: "resume.png",
-      altText: "Placeholder Icon",
-      fullscreen: false
-    },
-    {
-      windowId: "PhotoWindow", 
-      windowState: "close",
-      showOnDesktop:true,
-      displayName: "Photos",
-      windowComponent: 'window',
-      windowContent: 'Photos',
-      windowContentPadding: {
-        top: '5%',
-        right: '5%',
-        bottom: '5%',
-        left: '5%'
+      {
+        windowId: "ResumeLink",
+        windowState: "close",
+        showOnDesktop: true,
+        displayName: "Resume",
+        windowComponent: "window",
+        type: "url",
+        url: "/downloads/resume.pdf",
+        windowContent: "Photos",
+        windowContentPadding: {
+          top: "5%",
+          right: "5%",
+          bottom: "5%",
+          left: "5%",
+        },
+        position: "absolute",
+        positionX: "6vw",
+        positionY: "12vh",
+        iconImage: "resume.png",
+        altText: "Placeholder Icon",
+        fullscreen: false,
       },
-      position: "absolute",
-      positionX: "6vw",
-      positionY: "12vh",
-      iconImage: "camera.png",
-      altText: "Placeholder Icon",
-      fullscreen: false
-    },
+      {
+        windowId: "PhotoWindow",
+        windowState: "close",
+        showOnDesktop: true,
+        displayName: "Photos",
+        windowComponent: "window",
+        windowContent: "Photos",
+        windowContentPadding: {
+          top: "5%",
+          right: "5%",
+          bottom: "5%",
+          left: "5%",
+        },
+        position: "absolute",
+        positionX: "6vw",
+        positionY: "12vh",
+        iconImage: "camera.png",
+        altText: "Placeholder Icon",
+        fullscreen: false,
+      },
 
       {
-        windowId: "CaseStudies", 
+        windowId: "CaseStudies",
         windowState: "close",
-        showOnDesktop:true,
+        showOnDesktop: true,
         displayName: "Case Studies",
-        windowComponent: 'window',
-        windowContent: 'Case',
+        windowComponent: "window",
+        windowContent: "Case",
         windowContentPadding: {
-          top: '5%',
-          right: '5%',
-          bottom: '5%',
-          left: '5%'
+          top: "5%",
+          right: "5%",
+          bottom: "5%",
+          left: "5%",
         },
         position: "absolute",
         positionX: "10vw",
         positionY: "10vvh",
         iconImage: "case-studies.png",
         altText: "CaseStudies Icon",
-        fullscreen: false
-    },
-
+        fullscreen: false,
+      },
 
       {
-        windowId: "MailLink", 
+        windowId: "MailLink",
         windowState: "close",
-        showOnDesktop:false,
-        type:'url',
-        url:"https://mail.google.com/mail/u/0/?view=cm&fs=1&to=srikanthiyr7@gmail.com&su=" +
-        encodeURIComponent("Message from Website") +
-        "&body=" +
-        encodeURIComponent("Hi Srikanth, looking forward to connect with you"),
+        showOnDesktop: false,
+        type: "url",
+        url:
+          "https://mail.google.com/mail/u/0/?view=cm&fs=1&to=srikanthiyr7@gmail.com&su=" +
+          encodeURIComponent("Message from Website") +
+          "&body=" +
+          encodeURIComponent(
+            "Hi Srikanth, looking forward to connect with you"
+          ),
         displayName: "Mail",
-        windowComponent: 'window',
-        windowContent: 'Mail',
+        windowComponent: "window",
+        windowContent: "Mail",
         windowContentPadding: {
-          top: '5%',
-          right: '5%',
-          bottom: '5%',
-          left: '5%'
+          top: "5%",
+          right: "5%",
+          bottom: "5%",
+          left: "5%",
         },
         position: "absolute",
         positionX: "6vw",
         positionY: "12vh",
         iconImage: "mail.png",
         altText: "Placeholder Icon",
-        fullscreen: false
+        fullscreen: false,
       },
       {
-        windowId: "Behance", 
+        windowId: "Behance",
         windowState: "close",
         displayName: "Behance",
-        windowComponent: 'window',
-        type:'url',
-        showOnDesktop:false,
-        url:'http://behance.net/srikanthiy3978',
-        windowContent: 'Mail',
+        windowComponent: "window",
+        type: "url",
+        showOnDesktop: false,
+        url: "http://behance.net/srikanthiy3978",
+        windowContent: "Mail",
         windowContentPadding: {
-          top: '5%',
-          right: '5%',
-          bottom: '5%',
-          left: '5%'
+          top: "5%",
+          right: "5%",
+          bottom: "5%",
+          left: "5%",
         },
         position: "absolute",
         positionX: "6vw",
         positionY: "12vh",
         iconImage: "behance.png",
         altText: "Placeholder Icon",
-        fullscreen: false
+        fullscreen: false,
       },
       {
-        windowId: "Linkedin", 
+        windowId: "Linkedin",
         windowState: "close",
-        showOnDesktop:false,
-        type:'url',
-        url:'http://linkedin.com/in/srikanth-n-b5995324b',
+        showOnDesktop: false,
+        type: "url",
+        url: "http://linkedin.com/in/srikanth-n-b5995324b",
         displayName: "Linkedin",
-        windowComponent: 'window',
-        windowContent: 'Mail',
+        windowComponent: "window",
+        windowContent: "Mail",
         windowContentPadding: {
-          top: '5%',
-          right: '5%',
-          bottom: '5%',
-          left: '5%'
+          top: "5%",
+          right: "5%",
+          bottom: "5%",
+          left: "5%",
         },
         position: "absolute",
         positionX: "6vw",
         positionY: "12vh",
         iconImage: "linkedin.png",
         altText: "Placeholder Icon",
-        fullscreen: false
+        fullscreen: false,
       },
       {
-        windowId: "Dribbble", 
+        windowId: "Dribbble",
         windowState: "close",
-        showOnDesktop:false,
+        showOnDesktop: false,
         displayName: "Dribbble",
-        type:'url',
-        url:'http://dribbble.com/srikanthiyr7',
-        windowComponent: 'window',
-        windowContent: 'Mail',
+        type: "url",
+        url: "http://dribbble.com/srikanthiyr7",
+        windowComponent: "window",
+        windowContent: "Mail",
         windowContentPadding: {
-          top: '5%',
-          right: '5%',
-          bottom: '5%',
-          left: '5%'
+          top: "5%",
+          right: "5%",
+          bottom: "5%",
+          left: "5%",
         },
         position: "absolute",
         positionX: "6vw",
         positionY: "12vh",
         iconImage: "dribble.png",
         altText: "Placeholder Icon",
-        fullscreen: false
+        fullscreen: false,
       },
-
-
     ],
   },
   mutations: {
     // Active Window Mutator
     setActiveWindow(state, window) {
-      state.activeWindow = window
+      state.activeWindow = window;
     },
 
     // Pushes Active Window onto Active Windows Array
     pushActiveWindow(state, window) {
-      state.activeWindows.push(window)
+      state.activeWindows.push(window);
     },
 
     // Removes Active Window from Active Windows Array
     popActiveWindow(state, window) {
       const windowIndex = state.activeWindows.indexOf(window);
       if (windowIndex !== -1) {
-        state.activeWindows.splice(windowIndex, 1)
+        state.activeWindows.splice(windowIndex, 1);
       }
     },
 
     // Z-index increment function
     zIndexIncrement(state, windowID) {
-      state.zIndex += 1
-      document.getElementById(windowID).style.zIndex = state.zIndex
+      state.zIndex += 1;
+      document.getElementById(windowID).style.zIndex = state.zIndex;
     },
 
     // Set height of max-height of fullscreen window
     setFullscreenWindowHeight(state, height) {
-      state.fullscreenWindowHeight = height
+      state.fullscreenWindowHeight = height;
     },
 
     setFullscreen(state, payload) {
@@ -279,11 +273,11 @@ export default new Vuex.Store({
           this.commit("popActiveWindow", window);
         }, 0);
         setTimeout(() => {
-          this.commit("setActiveWindow", "nil"); 
+          this.commit("setActiveWindow", "nil");
         }, 0);
       } else if (payload.windowState == "minimize") {
         window.windowState = payload.windowState;
-        this.commit("setActiveWindow", "nil"); 
+        this.commit("setActiveWindow", "nil");
       } else {
         console.log("Error: windowState not found or invalid");
       }

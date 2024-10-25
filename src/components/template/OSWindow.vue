@@ -48,11 +48,12 @@
 
 .content {
     flex-grow: 1;
+    padding:0;
     overflow-x: hidden;
-    padding-right: var(--content-padding-right);
+    /* padding-right: var(--content-padding-right);
     padding-left: var(--content-padding-left);
     padding-top: var(--content-padding-top);
-    padding-bottom: var(--content-padding-bottom);
+    padding-bottom: var(--content-padding-bottom); */
 }
 
 iframe {
