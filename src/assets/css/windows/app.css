@@ -3,7 +3,6 @@ body {
     padding: 0;
     overflow: hidden;
     background:#7C6AF1;
-    background-image: url('../../background.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -12,4 +11,25 @@ body {
 *{
     cursor: url('../../sword.png'),auto;
 
+}
+
+.video-background {
+    position: relative;
+    height: 100vh; /* Full viewport height */
+    overflow: hidden; /* Hide overflow */
+}
+
+
+
+
+.video-background video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%; /* Ensure video covers the background */
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -5; /* Send video behind content */
+    transform: translate(-50%, -50%); /* Center the video */
 }

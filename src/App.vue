@@ -1,7 +1,29 @@
 <template>
 <div id="app">
+    <div class="mute-button" @click="toggleMute">
+            <div v-if="isMuted" >
+              
+    <img src="/images/volume_off.svg" alt="Volume Off" width="27px" height="27px"/>
+            </div>
+            <div v-else >
+              
+              <img src="/images/volume_on.svg" alt="Volume Off" width="27px" height="27px"/>
+                      </div>
+
+        </div>
+<div class="video-background">
+    <video autoplay muted loop>
+        <source src="/videos/spaceship-bg.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    </div>
     <top-navbar id="top-navbar"></top-navbar>
     <div class="screen" id="screen">
+
+        <audio ref="audio" id="audio-player" autoplay loop currentTIme="28">
+    <source src="/audios/stay-ost.mp3" type="audio/mpeg">
+    Your browser does not support the audio tag.
+</audio>
         <div 
             v-for="window in windows" 
             :key="window.key" 
@@ -54,6 +76,7 @@ export default {
     data: function () {
         return {
             windows: this.$store.getters.getWindows,
+            isMuted:false,
             windowComponents: {}
         }
     },
@@ -86,7 +109,7 @@ export default {
             Code is detecting height of navbar and setting
             respective heights of screen
         \*-------------------------------------------------*/
-
+        this.$refs.audio.currentTime = 25
         let navbar = document.getElementById('navbar')
         let topnavbar = document.getElementById('top-navbar')
         let topNavbarHeight = topnavbar.clientHeight
@@ -114,6 +137,13 @@ export default {
             }
             this.$store.commit('setWindowState', payload)
         },
+
+        toggleMute() {
+      const audio = this.$refs.audio;
+      audio.muted = !audio.muted; // Toggle mute
+      console.log(audio)
+      this.isMuted = audio.muted; // Update mute state
+    },
 
         windowCheck(windowId) {
             if (this.$store.getters.getWindowById(windowId).windowState == 'open') {
@@ -155,8 +185,16 @@ html {
 
 .screen {
     width: 100%;
-    position: relative;
-    z-index: 1;
+    position: absolute;
+    z-index: 1000;
+}
+
+.mute-button {
+    position: absolute;
+    top: 15px;
+    right:20px;
+    cursor: pointer;
+    z-index: 1001;
 }
 
 /*-------------------------------------------*\
