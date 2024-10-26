@@ -1,6 +1,6 @@
 <template>
-  <div id="app" @mouseover="playAudioOnHover" @click="playAudioOnClick">
-    <div class="mute-button" @click="toggleMute">
+  <div id="app" >
+    <div class="mute-button" @click="toggleMute" v-if="explore">
       <div v-if="isMuted">
         <img
           src="/images/volume_off.svg"
@@ -26,7 +26,7 @@
         EXPLORE
     </div>
     <div class="video-background">
-      <video autoplay muted loop ref="video">
+      <video autoplay muted loop ref="video" style="width:100vw;">
         <source src="/videos/spaceship-bg.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
@@ -159,15 +159,6 @@ export default {
       this.$store.commit("setWindowState", payload);
     },
 
-    playAudioOnHover() {
-      const audio = this.$refs.audio;
-      audio.play().catch((error) => {
-        console.error("Playback failed:", error);
-      });
-    },
-    playAudioOnClick() {
-      this.playAudioOnHover(); // Call the same method for clicks
-    },
 
     toggleMute() {
       const audio = this.$refs.audio;

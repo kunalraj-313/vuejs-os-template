@@ -15,7 +15,8 @@ body {
 
 .video-background {
     position: relative;
-    height: 100vh; /* Full viewport height */
+    height: 100vh; 
+    width: 100vw;
     overflow: hidden; /* Hide overflow */
 }
 
@@ -26,10 +27,9 @@ body {
     position: absolute;
     top: 50%;
     left: 50%;
-    min-width: 100%; /* Ensure video covers the background */
-    min-height: 100%;
-    width: auto;
-    height: auto;
+    object-fit: cover;
+    width: 100vw !important; 
+    height: 100vh;
     z-index: -5; /* Send video behind content */
     transform: translate(-50%, -50%); /* Center the video */
 }
