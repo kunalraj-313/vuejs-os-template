@@ -18,6 +18,10 @@
         />
       </div>
     </div>
+    <audio ref="audio" id="audio-player" autoplay loop>
+        <source src="/audios/stay-ost.mp3" type="audio/mpeg" />
+        Your browser does not support the audio tag.
+      </audio>
     <div class="explore-btn" @click="startExplore" v-if="!explore">
         EXPLORE
     </div>
@@ -32,10 +36,7 @@
         
     </div>
     <div class="screen" id="screen" v-if="explore">
-      <audio ref="audio" id="audio-player" autoplay loop>
-        <source src="/audios/stay-ost.mp3" type="audio/mpeg" />
-        Your browser does not support the audio tag.
-      </audio>
+  
       <div
         v-for="window in windows"
         :key="window.key"
@@ -123,12 +124,9 @@ export default {
             respective heights of screen
         \*-------------------------------------------------*/
 
-    const audio = this.$refs.audio;
     const video = this.$refs.video;
     video.pause()
-    audio.addEventListener("canplay", () => {
-      audio.currentTime = 25; // Set desired start time
-    });
+ 
     let navbar = document.getElementById("navbar");
     let topnavbar = document.getElementById("top-navbar");
     let topNavbarHeight = topnavbar.clientHeight;
@@ -179,11 +177,15 @@ export default {
 
     startExplore(){
         this.explore=true
-        const audio = this.$refs.audio;
+            const audio = this.$refs.audio;
         const video = this.$refs.video;
-        audio.play();
-        video.play();
+            audio.play()
+            audio.currentTime=25;
+            video.play()
+        
+  
     },
+    
 
     windowCheck(windowId) {
       if (this.$store.getters.getWindowById(windowId).windowState == "open") {
